@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+body {
+    background-color: var(--Light-grey);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Off-white) ;
+    height: auto;
+    width: 385px;
+    padding: 55px 10px;
+    border-radius: 30px;
+    border-bottom-right-radius: 120px;
+    margin-bottom: 20px;
+}
+form {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form label { 
+     width: 70px;
+     text-align: left;
+     align-items: center;
+     font-size: smaller;
+     margin-bottom: 2px;
+     color: var(--Smokey-grey);
+     font-weight: bolder;
+     letter-spacing: 2px;
+}
+.date-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+.invalid-day {
+    position: absolute;
+    letter-spacing: 0;
+    top: 80px;
+    right: 219px;
+    font-size: 9px;
+    color: var(--Light-red);
+    display: none;
+}
+.invalid-month {
+    position: absolute;
+    letter-spacing: 0;
+    top: 80px;
+    right: 108px;
+    font-size: 9px;
+    color: var(--Light-red);
+    display: none;
+
+}
+.invalid-year {
+    position: absolute;
+    letter-spacing: 0;
+    top: 80px;
+    font-size: 8px;
+    left: 205px;
+    color: var(--Light-red);
+    display: none;
+}
+.date-input-container input {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    width: 95%;
+    border-radius: 8px;
+
+}
+
+img {
+    border-radius: 100%;
+    width: 25px;
+    border: 0;
+}
+button {
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background-color: var(--Purple);
+    padding: 15px;
+    margin-top: 20px;
+    z-index: 1;
+}
+button:hover {
+    background-color: var(--Off-black);
+}
+p {
+   font-size:60px;
+   font-weight: 900;
+   font-style: italic;
+}
+p span {
+    color: var(--Purple);
+}
+.border {
+    position: absolute;
+    top: 145px;
+    z-index: 0;
+    height: 1px;
+    width: 100%;
+    color: black;
+    background-color: var(--Smokey-grey);
+    opacity: 0.5;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer-text {
+    font-size: smaller;
+}
+/* innvalid */
+
+.invalid-color {
+    color: var(--Light-red);
+}
+.invalid-border:focus {
+    border: 2px solid red !important;
+}
+.invalid-border {
+    border: 2px solid red !important;
+}
+/* animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style for the age element */
+.age {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 0.1s ease forwards; /* Apply the animation */
+}
+
+/* media */ 
+@media only screen and (min-width: 700px) {
+    main {
+        width: 500px;
+        padding: 10px 35px;
+        align-items: flex-start;
+    }
+    form {
+        width: 100%;
+    }
+    button {
+        position: relative;
+        left: 200px;
+    }
+    input {
+        padding: 35px 10px;
+    }
+    .invalid-day {
+        top: 80px;
+        right: 0;
+        left: 8px;
+    }
+    .invalid-month {
+        top: 80px;
+        right: 0px;;
+        left: 105px;
+    }
+    .invalid-year {
+        top: 80px;
+        font-size: 8px;
+        left: 205px;
+        color: var(--Light-red);
+        display: none;
+    }
+    
+}
